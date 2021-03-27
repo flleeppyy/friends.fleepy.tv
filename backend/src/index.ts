@@ -60,8 +60,8 @@ let utsuhoavatar: string;
 let nugavatar: string;
 function getAvatars() {
   const config = {
-    httpAgent: "	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
-    httpsAgent: "	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+    httpAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+    httpsAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
     headers: {
       connection: "keep-alive"
     },
