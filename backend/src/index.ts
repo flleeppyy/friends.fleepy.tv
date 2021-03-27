@@ -63,6 +63,7 @@ function getAvatars() {
     const beans = res.data.profile_image
     utsuhoavatar = beans.replace("_normal", "")
     console.log(res.data)
+    console.log(res.headers)
     if (beans === "") return getAvatars();
   }).catch(e=> console.error(e));
   axios.get("https://duckduckgo.com/tw.js?user=yokai_racist").then(res => {
