@@ -139,7 +139,7 @@ app.get("/friends", async (req,res) => {
         },
         {
           title: "Telegram", 
-          url: "https://t.me/flleeppyy",
+          url: "https://t.me/sysdotini",
           icon: "img/icons/telegram.png",
           bgColor: "white"
         }
