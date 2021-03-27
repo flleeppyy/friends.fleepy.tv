@@ -59,8 +59,16 @@ const app = Express();
 let utsuhoavatar: string;
 let nugavatar: string;
 function getAvatars() {
-  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks").then(res => {utsuhoavatar = String(res.data.profile_image).replace("_normal", "")}).catch(e=> console.error(e));
-  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist").then(res => {nugavatar = String(res.data.profile_image).replace("_normal", "")}).catch(e=> console.error(e));
+  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks").then(res => {
+    const beans = res.data.profile_image
+    utsuhoavatar = beans.replace("_normal", "")
+    console.log(res.data)
+  }).catch(e=> console.error(e));
+  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist").then(res => {
+    const beans = res.data.profile_image
+    nugavatar = beans.replace("_normal", "")
+    console.log(res.data)
+  }).catch(e=> console.error(e));
 }
 
 setInterval(getAvatars, 360000);
