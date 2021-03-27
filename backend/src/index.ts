@@ -59,14 +59,22 @@ const app = Express();
 let utsuhoavatar: string;
 let nugavatar: string;
 function getAvatars() {
-  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks").then(res => {
+  const config = {
+    httpAgent: "	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+    httpsAgent: "	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+    headers: {
+      connection: "keep-alive"
+    },
+    Host: "duckduckgo.com"
+  }
+  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks", config).then(res => {
     const beans = res.data.profile_image
     utsuhoavatar = beans.replace("_normal", "")
     console.log(res.data)
     console.log(res.headers)
     if (beans === "") return getAvatars();
   }).catch(e=> console.error(e));
-  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist").then(res => {
+  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist", config).then(res => {
     const beans = res.data.profile_image
     nugavatar = beans.replace("_normal", "")
     console.log(res.data)
