@@ -20,7 +20,7 @@ window.$ = $;
     $("html").css("background","none");
     $("main").fadeIn(400);
   });
-  (await import ("./dev")).default();
+  // (await import ("./dev")).default();
   (await import("./bg")).default();
   (await import("./darkreader")).default();
   (await import("./hue")).default();
