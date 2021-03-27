@@ -56,10 +56,19 @@ import Express from "express";
 
 const app = Express();
 
+let utsuhoavatar: string;
+let nugavatar: string;
+function getAvatars() {
+  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks").then(res => {utsuhoavatar = String(res.data.profile_image).replace("_normal", "")}).catch(e=> console.error(e));
+  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist").then(res => {nugavatar = String(res.data.profile_image).replace("_normal", "")}).catch(e=> console.error(e));
+}
+
+setInterval(getAvatars, 360000);
+getAvatars();
 app.get("/friends", async (req,res) => {
-  const utsuhoavatar = String(await (await axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks")).data.profile_image).replace("_normal", "");
-  const nugavatar = String(await (await axios.get("https://duckduckgo.com/tw.js?user=yokai_racist")).data.profile_image).replace("_normal", "");
-  
+  res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
+  res.header("Expires", "-1");
+  res.header("Pragma", "no-cache");
   res.send([
     {
       name: "HTFCirno2000",
