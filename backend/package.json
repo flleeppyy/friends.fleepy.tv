@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon --ext 'ts' --watch 'src' --exec 'tsc && NODE_ENV=development PORT=8080 ts-node ./src'",
+    "prod": "NODE_ENV=production PORT=8005 ts-node src/index.ts",
+    "dev:express": "ENGINE=express yarn dev",
+    "prod:express": "ENGINE=express yarn prod",
+    "dev:fastify": "ENGINE=fastify yarn dev",
+    "prod:fastify": "ENGINE=fastify yarn prod"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.36",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "fastify": "^3.14.0",
+    "fastify-static": "^4.0.1",
+    "socket.io": "^4.0.0",
+    "typescript": "^4.2.3"
+  }
+}
