@@ -4,7 +4,7 @@
   "description": "A part of my website where i list some of my best friends that i love so much",
   "main": "index.ts",
   "scripts": {
-    "install": "yarn -cwd backend && yarn --cwd frontend",
+    "install": "yarn --cwd backend yarn && yarn --cwd frontend yarn",
     "backend:dev": "yarn --cwd backend dev",
     "backend:prod": "yarn --cwd backend prod",
     "backend:dev:express": "yarn --cwd backend dev:express",
