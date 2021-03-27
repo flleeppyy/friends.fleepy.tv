@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import axios from "axios";
+import http from "http";
 
 const port = process.env.PORT || 8080;
 const listeningString = `Listening on port ${port} @ http://127.0.0.1:${port} or https://friends.fleepy.tv`;
@@ -56,34 +56,26 @@ import Express from "express";
 
 const app = Express();
 
-let utsuhoavatar: string;
-let nugavatar: string;
-function getAvatars() {
-  const config = {
-    headers: {
-      connection: "keep-alive",
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
-    },
-    Host: "duckduckgo.com"
-  }
-  axios.get("https://duckduckgo.com/tw.js?user=utsuhorocks", config).then(res => {
-    const beans = res.data.profile_image
-    utsuhoavatar = beans.replace("_normal", "")
-    console.log(res.data)
-    console.log(res.headers)
-    if (beans === "") return getAvatars();
-  }).catch(e=> console.error(e));
-  axios.get("https://duckduckgo.com/tw.js?user=yokai_racist", config).then(res => {
-    const beans = res.data.profile_image
-    nugavatar = beans.replace("_normal", "")
-    console.log(res.data)
+// let nugavatar: string;
+// function getAvatars() {
+//   const config = {
+//     headers: {
+//       connection: "keep-alive",
+//       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"
+//     },
+//     Host: "duckduckgo.com"
+//   }
+//   http.get("https://duckduckgo.com/tw.js?user=yokai_racist", config, res => {
+//     res.on("end", () => {
+//       res.read
+//     })  
+//   const beans = res.data.profile_image
+//     nugavatar = beans.replace("_normal", "")
+//     console.log(res.data));
+// }
 
-    if (beans === "") return getAvatars();
-  }).catch(e=> console.error(e));
-}
-
-setInterval(getAvatars, 360000);
-getAvatars();
+// setInterval(getAvatars, 360000);
+// getAvatars();
 app.get("/friends", async (req,res) => {
   res.header("Cache-Control", "private, no-cache, no-store, must-revalidate");
   res.header("Expires", "-1");
@@ -189,7 +181,7 @@ app.get("/friends", async (req,res) => {
       name: "UtsuhoRocks",
       namelowercase: "utsuhorocks",
       description: "I wish I talked to her more often, but when I do, she's very kind and compliments me a lot and just makes me kdsjhdfaskjfnalewjf oh and she is cute birb :3",
-      avatar: utsuhoavatar,
+      avatar: "https://github.com/briannafoxwell.png",
       socials: [
         {
           title: "Website",
@@ -223,7 +215,7 @@ app.get("/friends", async (req,res) => {
     {
       name: "Nug",
       namelowercase: "nug",
-      avatar: nugavatar,
+      avatar: "img/avatars/nug.jpg",
       description: "Nug is a really great friend, I enjoy talking to him and his voice is soothing to listen to, and I really enjoy watching his streams and I'm happy i made his\nstream overlay! ",
       socials: [
         {
