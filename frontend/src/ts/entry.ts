@@ -20,9 +20,15 @@ window.$ = $;
     $("html").css("background","none");
     $("main").fadeIn(400);
   });
-  // (await import ("./dev")).default();
-  (await import("./bg")).default();
-  (await import("./darkreader")).default();
-  (await import("./hue")).default();
-  (await import("./friends")).default();
+  
+  if (window.location.hostname === "127.0.0.1" || 
+      window.location.hostname === "localhost" || 
+      window.location.hostname === "0.0.0.0")
+  {
+    (await import("./modules/dev")).default();
+  }
+  (await import("./modules/bg")).default();
+  (await import("./modules/darkreader")).default();
+  (await import("./modules/hue")).default();
+  (await import("./modules/friends")).default();
 })();

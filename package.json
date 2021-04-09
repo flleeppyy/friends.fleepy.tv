@@ -4,7 +4,10 @@
   "description": "A part of my website where i list some of my best friends that i love so much",
   "main": "index.ts",
   "scripts": {
-    "install": "cd backend yarn install && cd ../frontend yarn install",
+    "installall": "cd frontend && yarn && cd ../backend && yarn",
+    "buildall": "shx rm -rf frontend/src/js && yarn frontend:sass:build && yarn frontend:build:prod",
+    "build": "yarn buildall",
+    "all": "yarn installall && yarn buildall",
     "backend:dev": "yarn --cwd backend dev",
     "backend:prod": "yarn --cwd backend prod",
     "frontend:sass:watch": "yarn --cwd frontend sass:watch",
@@ -20,6 +23,7 @@
     "@types/color": "^3.0.1",
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.7",
+    "shx": "^0.3.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
   },
