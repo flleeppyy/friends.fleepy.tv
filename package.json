@@ -4,7 +4,7 @@
   "description": "A part of my website where i list some of my best friends that i love so much",
   "main": "index.ts",
   "scripts": {
-    "installall": "cd frontend && yarn && cd ../backend && yarn",
+    "installall": "yarn && cd frontend && yarn && cd ../backend && yarn",
     "buildall": "shx rm -rf frontend/src/js && yarn frontend:sass:build && yarn frontend:build:prod",
     "build": "yarn buildall",
     "all": "yarn installall && yarn buildall",
