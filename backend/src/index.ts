@@ -259,7 +259,11 @@ app.get("/friends", async (req,res) => {
           textColor: "white",
           bgColor: "#503484"
         },
-        
+        {
+          title: "Steam",
+          url: "https://steamcommunity.com/id/waterwood75/",
+          icon: "img/icons/steam.png"
+        }
       ]
     }
   ]);
