@@ -238,7 +238,29 @@ app.get("/friends", async (req,res) => {
           icon: "img/icons/steam.png"
         }
       ]
-      
+    },
+    {
+      name: "WaterStar75",
+      namelowercase: "water",
+      avatar: ["img/avatars/water1.png", "img/avatars/water2.jpg", "img/avatars/water3.png"],
+      description: "I've known Water for a long time but I never got around to talking to her until just recently, and she's so cute and such a sweetheart, and cares so much about me its sdjfkjsahfjkslahf",
+      socials: [
+        {
+          title: "Twitter",
+          url: "https://twitter.com/waterstar75",
+          icon: "img/icons/twitter.png",
+          textColor: "white",
+          bgColor: "#1da1f2"
+        },
+        {
+          title: "Twitch",
+          url: "https://twitch.tv/waterstar75",
+          icon: "img/icons/twitch.png",
+          textColor: "white",
+          bgColor: "#503484"
+        },
+        
+      ]
     }
   ]);
 });

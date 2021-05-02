@@ -1,7 +1,8 @@
 class friend {
   name: string;
   namelowercase: string;
-  avatar: string;
+  avatar: string | string[];
+  avatars?: string[];
   description: string;
   socials?: social[] 
 }

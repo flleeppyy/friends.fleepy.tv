@@ -6,7 +6,7 @@
   "scripts": {
     "sass:build": "sass --source-map --update --style=compressed ./src/css",
     "sass:watch": "sass --source-map --update --style=compressed --watch ./src/css",
-    "build": "browserify './src/ts/entry.ts' -p tsify",
+    "build": "browserify src/ts/entry.ts -p tsify",
     "build:dev": "yarn build --debug --outfile src/js/bundle.js",
     "build:prod": "yarn build --outfile src/js/bundle_unfresh.js && uglifyjs --compress --output src/js/bundle.js src/js/bundle_unfresh.js",
     "build:devwatch": "cross-env nodemon --ext 'ts' --watch 'src/ts' --exec 'yarn build:dev'"

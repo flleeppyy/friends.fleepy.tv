@@ -191,11 +191,6 @@
         "signature": "506b80b9951c9381dc5f11897b31fca5e2a65731d96ddefa19687fbc26b23c6e",
         "affectsGlobalScope": true
       },
-      "./node_modules/axios/index.d.ts": {
-        "version": "0d892f035dbee4534f0ba096407136877595ca592f67ec9bb8a5c912b9c967e8",
-        "signature": "0d892f035dbee4534f0ba096407136877595ca592f67ec9bb8a5c912b9c967e8",
-        "affectsGlobalScope": false
-      },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "25b4a0c4fab47c373ee49df4c239826ee3430019fc0c1b5e59edc3e398b7468d",
         "signature": "25b4a0c4fab47c373ee49df4c239826ee3430019fc0c1b5e59edc3e398b7468d",
@@ -522,7 +517,7 @@
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
-        "version": "ed49cb5c4e18748d4b6926e84307eb0d936aff967f65ce336bf19c9e382921e4",
+        "version": "9572892fe00ba241acf54566dabea3da8160cc38a1658531e9785bdaed2f19a1",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       }
@@ -883,8 +878,8 @@
       "./src/index.ts": [
         "./node_modules/@types/express/index.d.ts",
         "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/http.d.ts",
         "./node_modules/@types/node/path.d.ts",
-        "./node_modules/axios/index.d.ts",
         "./node_modules/socket.io/dist/index.d.ts"
       ]
     },
@@ -1261,7 +1256,6 @@
       "./node_modules/@types/qs/index.d.ts",
       "./node_modules/@types/range-parser/index.d.ts",
       "./node_modules/@types/serve-static/index.d.ts",
-      "./node_modules/axios/index.d.ts",
       "./node_modules/socket.io-adapter/dist/index.d.ts",
       "./node_modules/socket.io-parser/dist/index.d.ts",
       "./node_modules/socket.io/dist/broadcast-operator.d.ts",

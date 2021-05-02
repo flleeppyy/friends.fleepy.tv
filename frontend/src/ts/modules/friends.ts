@@ -6,6 +6,13 @@ export default (): void => {
     axios.get("/friends").then((res) => {
       const friends: friend[] = res.data;
       friends.forEach((friend: friend) => {
+        const isArray = friend.avatar.constructor.name === "Array";
+        
+        if (isArray) {
+          //@ts-ignore
+          friend.avatars = friend.avatar
+          friend.avatar = friend.avatars[Math.floor(Math.random() * friend.avatars.length)];
+        }
         const box = $(`<div id="${friend.namelowercase}" class="dropshadow friend"></div>`);
         const avatar = $(`<img class="dropshadow avatar" src="${friend.avatar}">`).appendTo(box);
         const name = $(`<h2 class="name">${friend.name}</h2>`).appendTo(box);
@@ -32,8 +39,12 @@ export default (): void => {
         });
   
         avatar.on("click", function(e) {
-          //@ts-ignore
-          links.randomize("button");
+          if (isArray) {
+            avatar.attr("src", friend.avatars[Math.floor(Math.random() * friend.avatars.length)])
+          } else {
+            //@ts-ignore
+            links.randomize("button");
+          }
         });
         
         box.appendTo("#friends");
