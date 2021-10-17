@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 
 export default (): void => {
-  const socket = io.io("http://127.0.0.1:8081");
+  const socket = io("http://127.0.0.1:8081");
   const style = $("<style></style>").appendTo("head");
   
   fetchCss();

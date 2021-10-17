@@ -11,13 +11,12 @@ window.$ = $;
       $(this).children(selector).sort(function(){
         return Math.random() - 0.5;
       }).detach().appendTo(this);
-    });
-    
+    });   
     return this;
   };
 
   $(() => {
-    $("html").css("background","none");
+    $("body").css("background","none");
     $("main").fadeIn(400);
   });
   

@@ -134,7 +134,7 @@ export default [
     name: "Kawa",
     namelowercase: "kawa",
     avatar: "img/avatars/kawa.png",
-    description: "Kawa is a really great friend, I enjoy talking to him and his voice is soothing to listen to, and I really enjoy watching his streams and I'm happy i made his\nstream overlay! ",
+    description: "Kawa is a really great friend, I enjoy talking to her and their voice is soothing to listen to, and I really enjoy watching her streams and I'm happy I made her stream overlay!",
     socials: [
       {
         title: "Twitter",
