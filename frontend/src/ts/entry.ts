@@ -28,7 +28,6 @@ window.$ = $;
     (await import("./modules/dev")).default();
   }
   (await import("./modules/bg")).default();
-  (await import("./modules/darkreader")).default();
   (await import("./modules/hue")).default();
   (await import("./modules/friends")).default();
 })();
